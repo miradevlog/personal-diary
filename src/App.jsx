@@ -22,9 +22,7 @@ function App() {
   }, [entries]);
 
   const addEntry = (newEntry) => {
-    const existingEntry = entries.find(
-      (entry) => entry.date === newEntry.date,
-    );
+    const existingEntry = entries.find((entry) => entry.date === newEntry.date);
 
     if (existingEntry) {
       alert("Du hast heute bereits einen Eintrag erstellt.");
@@ -41,9 +39,7 @@ function App() {
 
   const updateEntry = (updatedEntry) => {
     const updatedEntries = entries
-      .map((entry) =>
-        entry.id === updatedEntry.id ? updatedEntry : entry,
-      )
+      .map((entry) => (entry.id === updatedEntry.id ? updatedEntry : entry))
       .sort((a, b) => new Date(b.date) - new Date(a.date));
 
     setEntries(updatedEntries);
@@ -61,19 +57,18 @@ function App() {
     setSelectedEntry(null);
   };
 
-  const latestDate =
-    entries.length > 0 ? entries[0].date : "Noch kein Eintrag";
+  const latestDate = entries.length > 0 ? entries[0].date : "Noch kein Eintrag";
 
   return (
     <div className="min-h-screen bg-[#f5f5f7]">
       <div className="max-w-6xl mx-auto px-6 py-14">
         <div className="mb-16">
           <h1 className="font-serif text-6xl md:text-7xl leading-tight">
-            Mein Tagebuch
+            Mira's Tagebuch
           </h1>
 
           <p className="mt-6 text-gray-500 text-lg max-w-xl">
-            Halte deine Erinnerungen, Gedanken und Erlebnisse fest.
+            Ein bisschen Journaling dies das.
           </p>
         </div>
 
@@ -91,9 +86,7 @@ function App() {
 
         {entries.length === 0 ? (
           <div className="text-center py-24">
-            <h2 className="font-serif text-4xl">
-              Noch keine Einträge
-            </h2>
+            <h2 className="font-serif text-4xl">Noch keine Einträge</h2>
 
             <p className="text-gray-500 mt-4">
               Erstelle deinen ersten Tagebucheintrag.
