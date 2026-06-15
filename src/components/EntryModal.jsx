@@ -38,7 +38,9 @@ function EntryModal({ entry, onClose, onEdit, onDelete }) {
         />
 
         <div className="p-8">
-          <p className="text-sm text-gray-500 mb-2">{entry.date}</p>
+          <p className="text-sm text-gray-500 mb-2">
+            {entry.date}
+          </p>
 
           <h2 className="font-serif text-4xl md:text-5xl mb-6 leading-tight">
             {entry.title}
@@ -55,6 +57,7 @@ function EntryModal({ entry, onClose, onEdit, onDelete }) {
           </div>
 
           <div className="flex flex-wrap gap-3 mt-10">
+
             <button
               onClick={onEdit}
               className="
@@ -99,6 +102,7 @@ function EntryModal({ entry, onClose, onEdit, onDelete }) {
             >
               Schließen
             </button>
+
           </div>
         </div>
       </div>
